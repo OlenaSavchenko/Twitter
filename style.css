@@ -1,0 +1,68 @@
+.posts-container {
+    position: relative;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+}
+.posts-box {
+    position: relative;
+}
+.posts-box,
+.posts-modal-box {
+    display: grid;
+    grid-template-rows: repeat(4, auto) 40px;
+    padding: 20px 10px;
+    box-shadow: 3px -2px 10px 3px rgba(34, 60, 80, 0.2);
+}
+.posts-btn-container {
+    display: flex;
+    justify-content: center;
+}
+.posts-delete-btn,
+.posts-showmore-btn,
+.posts-edit-btn,
+.posts-input-btn {
+    border: none;
+    padding: 10px;
+    transition: all 0.3s linear;
+}
+.posts-delete-btn {
+    margin-right: 10px;
+}
+
+.posts-showmore-btn {
+    margin-bottom: 20px;
+}
+.posts-input-btn {
+    justify-self: center;
+}
+
+.posts-delete-btn:hover {
+    background-color: rgb(209, 65, 65);
+    cursor: pointer;
+}
+.posts-showmore-btn:hover,
+.posts-edit-btn:hover,
+.posts-input-btn:hover {
+    background-color: rgb(148, 172, 148);
+    cursor: pointer;
+}
+
+.posts-modal-box {
+    position: absolute;
+    z-index: 2;
+    background-color: rgb(251, 251, 251);
+    align-items: flex-start;
+    width: 318px;
+}
+
+.posts-modal-box--add {
+    left: 16px;
+    top: 16px;
+}
+#posts-title-input,
+.posts-input {
+    padding: 10px;
+}
