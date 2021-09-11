@@ -1,5 +1,5 @@
 import Card from "./card.js"
-import Posts from "./posts.js"
+import Post from "./posts.js"
 const root = document.getElementById("root")
 class Modal extends Card {
     createBtn() {
@@ -46,7 +46,7 @@ class Modal extends Card {
                         const id = parentBox.dataset.id
                         const titleEl = parentBox.querySelector(".posts-title")
                         const textEl = parentBox.querySelector(".posts-text")
-                        const post = new Posts()
+                        const post = new Post()
                         post.createPutFetch(title, text, id)
                         titleEl.textContent = title
                         textEl.textContent = text
@@ -57,7 +57,7 @@ class Modal extends Card {
         }
     }
     createCard(title, text, userId = 1, id = 1) {
-        const post = new Posts(title, text, userId, id)
+        const post = new Post(title, text, userId, id)
         return post
     }
 }

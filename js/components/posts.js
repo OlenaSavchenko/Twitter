@@ -5,7 +5,7 @@ import { getRequest, changeRequest } from "../api.js"
 const BASE_URL = 'https://ajax.test-danit.com/api/json'
 const root = document.getElementById("root")
 
-class Posts extends Card {
+class Post extends Card {
     constructor(title, post, userId, id) {
         super()
         this.title = title
@@ -53,7 +53,7 @@ class Posts extends Card {
             }
         })
     }
-    renderPost(targetEl) {
+    render(targetEl) {
         this.html = `<h3 class="posts-title">${this.title}</h3>
         <p class="posts-text">${this.post}</p>
         <div class="posts-btn-container">
@@ -67,8 +67,8 @@ class Posts extends Card {
     renderCreatedByUserPost(post) {
         const user = new User(this.name, this.email, this.id)
         const articleEl = this.createArticle(this.id)
-        user.renderUserHtml(articleEl)
-        post.renderPost(articleEl)
+        user.render(articleEl)
+        post.render(articleEl)
         const div = root.prepend(articleEl)
         return div
     }
@@ -97,4 +97,4 @@ class Posts extends Card {
     }
 }
 
-export default Posts
+export default Post

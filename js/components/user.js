@@ -11,24 +11,21 @@ class User {
     }
     createUsersArr() {
         return this.getUsers()
-            .then(users => users.map(({ name, email, id }) => {
-                const users = new User(name, email, id)
-                return users
-            }))
+            .then((users) => users.map(({ name, email, id }) => new User(name, email, id)))
     }
     getUserById(userId) {
         return users => users.find(({ id }) => id === userId)
     }
-    renderUserHtml(targetEl) {
+    render(targetEl) {
         this.html = `<h2>${this.name}</h2>
         <a href="${this.email}">${this.email}</a>`
         targetEl.insertAdjacentHTML('afterbegin', this.html)
         return targetEl
     }
-    createUser(userId, targetEl) {
+    create(userId, targetEl) {
         return this.createUsersArr()
             .then(this.getUserById(userId))
-            .then(user => user.renderUserHtml(targetEl))
+            .then(user => user.render(targetEl))
     }
 }
 
